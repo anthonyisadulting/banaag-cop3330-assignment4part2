@@ -16,6 +16,7 @@ public class ToDoListController {
         //get string values of all of the text fields
         //add all entered values to an array
         //clear the display
+        //store
     }
     @FXML
     public void adduniqueitem(ActionEvent actionEvent) {
