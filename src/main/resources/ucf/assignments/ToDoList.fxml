@@ -10,20 +10,20 @@
 
 <AnchorPane prefHeight="893.0" prefWidth="925.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.ToDoListController">
    <children>
-      <Button layoutX="75.0" layoutY="14.0" mnemonicParsing="false" onAction="#additemanddescription" prefHeight="25.0" prefWidth="178.0" text="Add Item and Description" />
-      <TextField layoutX="278.0" layoutY="14.0" onAction="#adduniqueitem" promptText="Enter Item (Enter 1)" />
-      <DatePicker layoutX="75.0" layoutY="48.0" onAction="#enterdate" prefHeight="25.0" prefWidth="178.0" promptText="Enter Date (YYYY-MM-DD)" />
+      <Button layoutX="75.0" layoutY="14.0" mnemonicParsing="false" onAction="#additemanddescription" onMouseClicked="#additemanddescription" prefHeight="25.0" prefWidth="178.0" text="Add Item and Description" />
+      <TextField fx:id="enteritemname" layoutX="278.0" layoutY="14.0" promptText="Enter Item (Enter 1)" />
+      <DatePicker fx:id="enterdate" layoutX="75.0" layoutY="48.0" onMouseClicked="#enterdate" prefHeight="25.0" prefWidth="178.0" promptText="Enter Date (YYYY-MM-DD)" />
       <Text layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To Do List" />
       <Pane layoutX="15.0" layoutY="260.0" prefHeight="618.0" prefWidth="679.0">
          <children>
-            <ListView fx:id="TheListOfLists" layoutX="14.0" layoutY="9.0" prefHeight="600.0" prefWidth="232.0" />
-            <ListView layoutX="265.0" layoutY="9.0" prefHeight="600.0" prefWidth="373.0" />
+            <ListView fx:id="listofitemnames" layoutX="14.0" layoutY="9.0" prefHeight="600.0" prefWidth="232.0" />
+            <ListView fx:id="listofitemdescriptions" layoutX="265.0" layoutY="9.0" prefHeight="600.0" prefWidth="373.0" />
          </children>
       </Pane>
-      <TextField layoutX="278.0" layoutY="48.0" onAction="#adduniqueitemdescription" prefHeight="159.0" prefWidth="149.0" promptText="Enter Item Description" />
+      <TextField fx:id="enteritemdescription" layoutX="278.0" layoutY="48.0" onAction="#enteruniqueitemdescription" prefHeight="159.0" prefWidth="149.0" promptText="Enter Item Description" />
       <Pane layoutX="696.0" layoutY="274.0" prefHeight="590.0" prefWidth="191.0">
          <children>
-            <Button layoutX="47.0" layoutY="14.0" mnemonicParsing="false" onAction="#RemoveItem" prefHeight="25.0" prefWidth="97.0" text="Remove Item&#10;&#10;" />
+            <Button layoutX="47.0" layoutY="14.0" mnemonicParsing="false" onAction="#RemoveItem" onMouseClicked="#RemoveItem" prefHeight="25.0" prefWidth="97.0" text="Remove Item&#10;&#10;" />
             <Button layoutX="17.0" layoutY="81.0" mnemonicParsing="false" onAction="#EditDescription" text="Edit Description of an Item" />
             <Button layoutX="50.0" layoutY="116.0" mnemonicParsing="false" onAction="#EditDueDate" text="Edit Due Date" />
             <Button layoutX="23.0" layoutY="177.0" mnemonicParsing="false" onAction="#MarkItemAsComplete" text="Mark Item As Complete&#10;" />

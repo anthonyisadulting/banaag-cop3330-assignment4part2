@@ -6,6 +6,9 @@ package ucf.assignments;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
 //make sure to do @FXML to link textfields to controller class (fxid)
 //used to be able to grab data between controller and gui
@@ -13,11 +16,29 @@ import javafx.fxml.FXML;
 public class ToDoListController {
 
     @FXML
-    public void adduniqueitem(ActionEvent actionEvent) {
+    private TextField enteritemname;
+
+    @FXML
+    private DatePicker enterdate;
+
+    @FXML
+    private ListView<String> listofitemnames;
+
+    @FXML
+    private ListView<?> listofitemdescriptions;
+
+    @FXML
+    private TextField enteritemdescription;
+
+    @FXML
+    public void additemanddescription(ActionEvent actionEvent) {
         //get string value of item entered
+        listofitemnames.getItems().add(enteritemname.getText());
         //add value into an array
         //clear display
     }
+
+
     @FXML
     public void enterdate(ActionEvent actionEvent) {
         //make sure to get string value (not int value)
@@ -91,13 +112,9 @@ public class ToDoListController {
 
     }
 
-    @FXML
-    public void adduniqueitemdescription(ActionEvent actionEvent) {
 
+
+
+    public void enteruniqueitemdescription(ActionEvent actionEvent) {
     }
-
-    @FXML
-    public void additemanddescription(ActionEvent actionEvent) {
-    }
-
 }
