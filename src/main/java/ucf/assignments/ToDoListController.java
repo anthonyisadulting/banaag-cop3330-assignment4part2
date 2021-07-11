@@ -11,13 +11,7 @@ import javafx.fxml.FXML;
 //used to be able to grab data between controller and gui
 
 public class ToDoListController {
-    @FXML
-    public void addlistbutton(ActionEvent actionEvent) {
-        //get string values of all of the text fields
-        //add all entered values to an array
-        //clear the display
-        //store
-    }
+
     @FXML
     public void adduniqueitem(ActionEvent actionEvent) {
         //get string value of item entered
@@ -30,42 +24,8 @@ public class ToDoListController {
         //assign to a string variable
         //clear when 'addlistbutton' is clicked
     }
-    @FXML
-    public void entertitle(ActionEvent actionEvent) {
-        //get string value of item entered
-        //assign to a string variable
-        //clear when 'addlistbutton' is clicked
-    }
-    @FXML
-    public void adduniqueitembutton(ActionEvent actionEvent) {
-        //make sure that a list from 'ListofLists' is clicked
-        //get string value (somehow connect this to either the gui on the top or create a new gui for this)
-        //add to the array
 
-    }
-    @FXML
-    public void removelist(ActionEvent actionEvent) {
-        //make sure that a list from 'ListofLists' is clicked
-        //delete the list from the array
-    }
-    @FXML
-    public void edittitle(ActionEvent actionEvent) {
-        //make sure that a list from 'ListofLists' listview is clicked
-        //get string value (somehow connect this to either the gui on the top or create a new gui for this)
-        //rename the array
-    }
-    @FXML
-    public void AddItemToExistingList(ActionEvent actionEvent) {
-        //make sure that a list from 'ListofLists' listview is clicked
-        //get string value (somehow connect this to either the gui on the top or create a new gui for this)
-        //add value to the list array
-    }
-    @FXML
-    public void RemoveItemFromExistingList(ActionEvent actionEvent) {
-        //make sure that a list from 'ListofLists' listview is clicked
-        //get user to click on the string value (somehow connect this to either the gui on the top or create a new gui for this)
-        //remove the  value from the list array
-    }
+
     @FXML
     public void EditDescription(ActionEvent actionEvent) {
         //make sure that a list from 'ListofLists' listview is clicked
@@ -100,47 +60,44 @@ public class ToDoListController {
         //if item does not have 'markitemascomplete' function used, add it into an array
         //display the array
     }
+
     @FXML
-    public void SaveSingleListtoFile(ActionEvent actionEvent) {
-        //get array the user clicks on
-        //file io reader and writer
-        // save it to txt file
-
-        //OR
-
-        //gson
-    }
-    @FXML
-    public void SaveAllListItemsToFile(ActionEvent actionEvent) {
-        //get all arrays in the system
-        //file io reader and writer
-        //save it to txt file
-
-        //OR
-
-        //gson
+    public void RemoveItem(ActionEvent actionEvent) {
 
     }
+
     @FXML
-    public void LoadSingleListItemsToApp(ActionEvent actionEvent) {
-
-        //file reader
-        //code format of accepting only one list
-        //ask user what file they want to load (research directory javafx management)
-        //convert txt to array
-        //display array
-
-        //or gson
-    }
-    @FXML
-    public void LoadAllListItemsToApp(ActionEvent actionEvent) {
-        //file reader
-        //code format of accepting multiple lists
-        //ask user what file they want to load (research directory javafx management
-        //convert txt to array
-        //display array
-
-        //or gson
+    public void savelisttofile(ActionEvent actionEvent) {
 
     }
+
+    @FXML
+    public void loadlisttoapp(ActionEvent actionEvent) {
+
+    }
+
+    @FXML
+    public void clearlistofallitems(ActionEvent actionEvent) {
+
+    }
+
+    @FXML
+    public void markitemasincomplete(ActionEvent actionEvent) {
+
+    }
+
+    @FXML
+    public void needhelpbutton(ActionEvent actionEvent) {
+
+    }
+
+    @FXML
+    public void adduniqueitemdescription(ActionEvent actionEvent) {
+
+    }
+
+    @FXML
+    public void additemanddescription(ActionEvent actionEvent) {
+    }
+
 }
