@@ -4,16 +4,25 @@ package ucf.assignments;
  *  Copyright 2021 Anthony Banaag
  */
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
+
+import java.net.URL;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.format.DateTimeFormatter;
+import java.util.ResourceBundle;
 
 //make sure to do @FXML to link textfields to controller class (fxid)
 //used to be able to grab data between controller and gui
 
-public class ToDoListController {
+public class ToDoListController implements Initializable {
 
     @FXML
     private TextField enteritemname;
@@ -22,29 +31,43 @@ public class ToDoListController {
     private DatePicker enterdate;
 
     @FXML
-    private ListView<String> listofitemnames;
-
-    @FXML
-    private ListView<?> listofitemdescriptions;
-
-    @FXML
     private TextField enteritemdescription;
+
+    @FXML
+    private TableView<ToDoListContent> tablelist;
+
+    @FXML
+    private TableColumn<ToDoListContent, String> listofitemnames;
+
+    @FXML
+    private TableColumn<ToDoListContent, LocalDate> listofdates;
+
+    @FXML
+    private TableColumn<ToDoListContent, String> listofitemdescriptions;
+
 
     @FXML
     public void additemanddescription(ActionEvent actionEvent) {
         //get string value of item entered
-        listofitemnames.getItems().add(enteritemname.getText());
-        //add value into an array
-        //clear display
+
+
+        //convert date to string in a function
+        //
+
+
     }
+
 
 
     @FXML
-    public void enterdate(ActionEvent actionEvent) {
-        //make sure to get string value (not int value)
-        //assign to a string variable
-        //clear when 'addlistbutton' is clicked
+    public void RemoveItem(ActionEvent actionEvent) {
+   //remove item names
+
+
     }
+
+
+
 
 
     @FXML
@@ -82,10 +105,7 @@ public class ToDoListController {
         //display the array
     }
 
-    @FXML
-    public void RemoveItem(ActionEvent actionEvent) {
 
-    }
 
     @FXML
     public void savelisttofile(ActionEvent actionEvent) {
@@ -114,7 +134,43 @@ public class ToDoListController {
 
 
 
-
+    @FXML
     public void enteruniqueitemdescription(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void changeItemNameCellEvent(TableColumn.CellEditEvent editedCell){
+        ToDoListContent listselected = tablelist.getSelectionModel().getSelectedItem();
+        listselected.setItemname(editedCell.getNewValue().toString());
+
+    }
+    @FXML
+    public void changeItemDescriptionCellEvent(TableColumn.CellEditEvent editedCell){
+        ToDoListContent listselected = tablelist.getSelectionModel().getSelectedItem();
+        listselected.setItemdescription(editedCell.getNewValue().toString());
+
+    }
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+       listofitemnames.setCellValueFactory(new PropertyValueFactory<ToDoListContent, String>("itemname"));
+        listofdates.setCellValueFactory(new PropertyValueFactory<ToDoListContent, LocalDate>("userdate"));
+        listofitemdescriptions.setCellValueFactory(new PropertyValueFactory<ToDoListContent, String>("itemdescription"));
+
+        tablelist.setItems(getcontent());
+
+        //update table item name and itemdesc to be editable
+        tablelist.setEditable(true);
+        listofitemnames.setCellFactory(TextFieldTableCell.forTableColumn());
+        listofitemdescriptions.setCellFactory(TextFieldTableCell.forTableColumn());
+    }
+
+    public ObservableList<ToDoListContent> getcontent(){
+        ObservableList<ToDoListContent> itemlist = FXCollections.observableArrayList();
+        itemlist.add(new ToDoListContent("Paint the Town", LocalDate.of(1915, Month.FEBRUARY, 12),"Get Paint"));
+        itemlist.add(new ToDoListContent("Cry", LocalDate.of(2003, Month.FEBRUARY, 20),"Birth"));
+
+        return itemlist;
     }
 }
