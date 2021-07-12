@@ -11,16 +11,15 @@
 
 <AnchorPane prefHeight="893.0" prefWidth="1070.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.ToDoListController">
    <children>
-      <Button layoutX="75.0" layoutY="14.0" mnemonicParsing="false" onAction="#additemanddescription" onMouseClicked="#additemanddescription" prefHeight="25.0" prefWidth="178.0" text="Add Item and Description" />
+      <Button layoutX="75.0" layoutY="14.0" mnemonicParsing="false" onAction="#additemdateanddescription" prefHeight="25.0" prefWidth="191.0" text="Add Item, Date, and Description" />
       <TextField fx:id="enteritemname" layoutX="278.0" layoutY="14.0" promptText="Enter Item (Enter 1)" />
-      <DatePicker fx:id="enterdate" layoutX="75.0" layoutY="48.0" prefHeight="25.0" prefWidth="178.0" promptText="Enter Date (YYYY-MM-DD)" />
+      <DatePicker fx:id="enterdate" layoutX="75.0" layoutY="48.0" prefHeight="25.0" prefWidth="191.0" promptText="Enter Date (YYYY-MM-DD)" />
       <Text layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To Do List" />
       <TextField fx:id="enteritemdescription" layoutX="278.0" layoutY="48.0" onAction="#enteruniqueitemdescription" prefHeight="159.0" prefWidth="149.0" promptText="Enter Item Description" />
       <Pane layoutX="859.0" layoutY="274.0" prefHeight="590.0" prefWidth="191.0">
          <children>
             <Button layoutX="47.0" layoutY="14.0" mnemonicParsing="false" onAction="#RemoveItem" onMouseClicked="#RemoveItem" prefHeight="25.0" prefWidth="97.0" text="Remove Item&#10;&#10;" />
-            <Button layoutX="17.0" layoutY="81.0" mnemonicParsing="false" onAction="#EditDescription" text="Edit Description of an Item" />
-            <Button layoutX="50.0" layoutY="116.0" mnemonicParsing="false" onAction="#EditDueDate" text="Edit Due Date" />
+            <Button layoutX="51.0" layoutY="81.0" mnemonicParsing="false" onAction="#EditDueDate" text="Edit Due Date" />
             <Button layoutX="23.0" layoutY="177.0" mnemonicParsing="false" onAction="#MarkItemAsComplete" text="Mark Item As Complete&#10;" />
             <Button layoutX="42.0" layoutY="268.0" mnemonicParsing="false" onAction="#DisplayAllItems" text="Display All Items" />
             <Button layoutX="34.0" layoutY="304.0" mnemonicParsing="false" onAction="#DisplayCompletedItems" text="Display Completed &#10;Items" textAlignment="CENTER" />

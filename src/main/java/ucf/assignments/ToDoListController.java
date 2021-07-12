@@ -47,35 +47,42 @@ public class ToDoListController implements Initializable {
 
 
     @FXML
-    public void additemanddescription(ActionEvent actionEvent) {
+    public void additemdateanddescription(ActionEvent actionEvent) {
         //get string value of item entered
-
-
-        //convert date to string in a function
-        //
-
+        ToDoListContent newitemdateanddescription = new ToDoListContent(enteritemname.getText(), enterdate.getValue(), enteritemdescription.getText());
+        //get items as a list then add new item
+        tablelist.getItems().add(newitemdateanddescription);
 
     }
-
-
 
     @FXML
     public void RemoveItem(ActionEvent actionEvent) {
-   //remove item names
+   //remove item
+
+        ObservableList<ToDoListContent> selectedRows, allItems;
+        allItems = tablelist.getItems();
+        selectedRows = tablelist.getSelectionModel().getSelectedItems();
+
+        //loop over selected rows and remove
+        for (ToDoListContent list : selectedRows){
+            allItems.remove(list);
+        }
 
 
     }
-
-
-
-
 
     @FXML
-    public void EditDescription(ActionEvent actionEvent) {
-        //make sure that a list from 'ListofLists' listview is clicked
-        //get user to click on the string value (somehow connect this to either the gui on the top or create a new gui for this)
-        //edit description from the list array
+    public void clearlistofallitems(ActionEvent actionEvent) {
+        ObservableList<ToDoListContent> allItems;
+        allItems = tablelist.getItems();
+
+
+        //loop over all rows and remove
+        allItems.removeAll(allItems);
+
     }
+
+
     @FXML
     public void EditDueDate(ActionEvent actionEvent) {
         //make sure that a list from 'ListofLists' listview is clicked
@@ -117,10 +124,7 @@ public class ToDoListController implements Initializable {
 
     }
 
-    @FXML
-    public void clearlistofallitems(ActionEvent actionEvent) {
 
-    }
 
     @FXML
     public void markitemasincomplete(ActionEvent actionEvent) {
@@ -152,25 +156,33 @@ public class ToDoListController implements Initializable {
     }
 
 
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
        listofitemnames.setCellValueFactory(new PropertyValueFactory<ToDoListContent, String>("itemname"));
         listofdates.setCellValueFactory(new PropertyValueFactory<ToDoListContent, LocalDate>("userdate"));
         listofitemdescriptions.setCellValueFactory(new PropertyValueFactory<ToDoListContent, String>("itemdescription"));
 
-        tablelist.setItems(getcontent());
+        //tablelist.setItems(getcontent());
 
         //update table item name and itemdesc to be editable
         tablelist.setEditable(true);
         listofitemnames.setCellFactory(TextFieldTableCell.forTableColumn());
         listofitemdescriptions.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        //remove items
+        tablelist.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
     }
 
+
+/*
     public ObservableList<ToDoListContent> getcontent(){
         ObservableList<ToDoListContent> itemlist = FXCollections.observableArrayList();
         itemlist.add(new ToDoListContent("Paint the Town", LocalDate.of(1915, Month.FEBRUARY, 12),"Get Paint"));
         itemlist.add(new ToDoListContent("Cry", LocalDate.of(2003, Month.FEBRUARY, 20),"Birth"));
 
         return itemlist;
-    }
+    }*/
 }
