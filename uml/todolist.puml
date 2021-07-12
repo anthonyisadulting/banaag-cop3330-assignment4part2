@@ -10,25 +10,7 @@ class ToDoList{
 }
 
 class ToDoListController{
-     +addlistbutton(boolean)
-     +adduniqueitem(string)
-     +enterdate(string)
-     +entertitle(string)
-     +adduniqueitembutton(string)
-     +removelist(boolean)
-     +edittitle(string)
-     +AddItemToExistingList(string)
-     +RemoveItemFromExistingList(boolean)
-     +EditDescription(string)
-     +EditDueDate(string)
-     +MarkItemAsComplete(boolean)
-     +DisplayAllItems(string)
-     +DisplayCompletedItems(string or list/array)
-     +DisplayIncompletedItems(string or list/array)
-     +SaveSingleListtoFile(static or file i/o)
-     +SaveAllListItemsToFile(static or file i/o)
-     +LoadSingleListItemsToApp(static or file i/o)
-     +LoadAllListItemsToApp(static or file i/o)
+
 }
 javafx.Application <|--ToDoList
 ToDoList- ToDoListController

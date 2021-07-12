@@ -164,7 +164,7 @@ public class ToDoListController implements Initializable {
         listofdates.setCellValueFactory(new PropertyValueFactory<ToDoListContent, LocalDate>("userdate"));
         listofitemdescriptions.setCellValueFactory(new PropertyValueFactory<ToDoListContent, String>("itemdescription"));
 
-        //tablelist.setItems(getcontent());
+
 
         //update table item name and itemdesc to be editable
         tablelist.setEditable(true);
@@ -177,12 +177,5 @@ public class ToDoListController implements Initializable {
     }
 
 
-/*
-    public ObservableList<ToDoListContent> getcontent(){
-        ObservableList<ToDoListContent> itemlist = FXCollections.observableArrayList();
-        itemlist.add(new ToDoListContent("Paint the Town", LocalDate.of(1915, Month.FEBRUARY, 12),"Get Paint"));
-        itemlist.add(new ToDoListContent("Cry", LocalDate.of(2003, Month.FEBRUARY, 20),"Birth"));
 
-        return itemlist;
-    }*/
 }
