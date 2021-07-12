@@ -10,8 +10,46 @@ class ToDoList{
 }
 
 class ToDoListController{
+-enteritemname;
+-enterdate;
+-enteritemdescription;
+-tablelist;
+-listofitemnames;
+-listofdates;
+-listofitemdescriptions;
+
+additemdateanddescription()
+RemoveItem()
+clearlistofallitems()
+EditDueDate()
+MarkItemAsComplete()
+DisplayAllItems()
+DisplayCompletedItems()
+DisplayIncompletedItems()
+savelisttofile()
+loadlisttoapp()
+markitemasincomplete()
+needhelpbutton()
+enteruniqueitemdescription()
+changeItemNameCellEvent()
+ changeItemDescriptionCellEvent()
+}
+
+class ToDoListContent{
+-itemname;
+-userdate;
+-itemdescription;
+
++getItemname()
++getUserdate()
++getItemdescription()
++setItemname()
++setUserdate()
+ +setItemdescription()
 
 }
+
+ToDoListController-ToDoListContent
 javafx.Application <|--ToDoList
 ToDoList- ToDoListController
 
